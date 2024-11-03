@@ -2,9 +2,10 @@ import tkinter as tk
 from PIL import Image, ImageTk
 
 class StartScreen(tk.Frame):
-    def __init__(self, parent):
+    def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         self.grid(row=0, column=0, sticky="nsew")
+        self.controller = controller
 
         # 캔버스 생성
         self.canvas = tk.Canvas(self, width=2280, height=1800)
@@ -45,7 +46,8 @@ class StartScreen(tk.Frame):
         button_frame.place(x=1200, y=600, anchor="n")
 
         # 버튼 생성
-        button_to_Writing = tk.Button(button_frame, text="글 쓰러가기 ▶", font=("제주고딕", 30))
+        button_to_Writing = tk.Button(button_frame, text="글 쓰러가기 ▶", font=("제주고딕", 30),
+                                      command=lambda: controller.show_frame("WritingScreen"))
         button_to_Reading = tk.Button(button_frame, text="글 보러가기 ▶", font=("제주고딕", 30))
 
         button_to_Writing.pack(side="top", padx=10, pady=15)
