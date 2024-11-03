@@ -4,6 +4,7 @@ from StartScreen import StartScreen
 # 창 생성
 window = tk.Tk()
 window.title("이곳에선 내가 작가?!")
+window.geometry("2280x1080")
 
 # 전체 화면 설정
 window.attributes("-fullscreen", True)
@@ -17,14 +18,12 @@ window.bind("<Escape>", quit_fullscreen)
 # 프레임 설정
 container = tk.Frame(window)
 container.pack(fill="both", expand=True)
-
-# 화면 전환 함수
-def show_frame(frame_class):
-    frame = frame_class(container)
-    frame.tkraise()
+container.grid_rowconfigure(0, weight=1)
+container.grid_columnconfigure(0, weight=1)
 
 # 첫 화면 설정
-show_frame(StartScreen)
-
+start_screen = StartScreen(container)
+start_screen.grid(row=0, column=0, sticky="nsew")
+start_screen.tkraise()
 # 창 실행
 window.mainloop()
