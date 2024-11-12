@@ -1,4 +1,6 @@
 import tkinter as tk
+
+from FreeWritingScreen import FreeWritingScreen
 from StartScreen import StartScreen
 from WritingScreen import WritingScreen
 
@@ -21,7 +23,7 @@ class MainApp(tk.Tk):
         # 화면 딕셔너리에 프레임 저장
         self.frames = {}
 
-        for F in (StartScreen, WritingScreen):
+        for F in (StartScreen, WritingScreen, FreeWritingScreen):
             page_name = F.__name__
             frame = F(container, self)  # controller로 self를 전달
             self.frames[page_name] = frame
@@ -30,7 +32,6 @@ class MainApp(tk.Tk):
         self.show_frame("StartScreen")  # 첫 화면을 StartScreen으로 설정
 
     def show_frame(self, page_name):
-        """전달된 페이지 이름에 해당하는 프레임을 전면에 표시"""
         frame = self.frames[page_name]
         frame.tkraise()
 

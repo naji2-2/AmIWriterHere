@@ -44,10 +44,13 @@ class WritingScreen(tk.Frame):
         topic_options = ["로멘스 판타지", "스릴러", "코미디", "로맨스", "판타지", "액션", "미스터리"]
         self.selected_option = tk.StringVar(value="주제 선택")  #기본값 설정
 
+        # 주제가 선택될 때마다 show_selected_option 메서드 호출
+        self.selected_option.trace("w", lambda *args: self.show_selected_option())
+
         # 드롭 다운
         dropdown_topic = tk.OptionMenu(self, self.selected_option, *topic_options)
         dropdown_topic.config(font=("제주고딕", 30))
-        dropdown_topic.place(x=60, y=250, anchor="nw")
+        dropdown_topic.place(x=80, y=250, anchor="nw")
         #dropdown_topic.pack(pady=20)
 
         button_frame = tk.Frame(self)
@@ -55,7 +58,7 @@ class WritingScreen(tk.Frame):
 
         # 버튼 생성
         button_to_Free = tk.Button(button_frame, text="자유 글 쓰기 ▶", font=("제주고딕", 30),
-                                      command=lambda: controller.show_frame("WritingScreen"))
+                                      command=lambda: controller.show_frame("FreeWritingScreen"))
         button_to_Random = tk.Button(button_frame, text="랜덤 소재 뽑기 ▶", font=("제주고딕", 30))
 
         button_to_Free.pack(side="top", padx=10, pady=15)
@@ -66,6 +69,7 @@ class WritingScreen(tk.Frame):
                                 command=lambda: controller.show_frame("StartScreen"))
         back_button.place(x=1180, y=50, anchor="nw")
 
+    # 선택 된 주제
     def show_selected_option(self):
         selected = self.selected_option.get()
         print(f"선택된 옵션: {selected}")

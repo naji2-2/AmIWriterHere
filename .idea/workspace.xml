@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a30e3a00-4c67-4eef-a190-a5fee6ad9295" name="변경" comment="feat: 시작 화면 구현">
-      <change afterPath="$PROJECT_DIR$/WritingScreen.py" afterDir="false" />
+    <list default="true" id="a30e3a00-4c67-4eef-a190-a5fee6ad9295" name="변경" comment="feat: 글 쓰러 가기 화면 구현">
+      <change afterPath="$PROJECT_DIR$/FreeWritingScreen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StartScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/StartScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WritingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/WritingScreen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,16 +49,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Random.executor&quot;: &quot;Run&quot;,
-    &quot;Python.StartScreen.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.FreeWritingScreen.executor": "Run",
+    "Python.Main.executor": "Run",
+    "Python.Random.executor": "Run",
+    "Python.StartScreen.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -107,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730645510348</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: 글 쓰러 가기 화면 구현">
+      <option name="closed" value="true" />
+      <created>1730649193453</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730649193453</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -115,6 +124,7 @@
     <MESSAGE value="feat: 랜덤 주제 선택 함수" />
     <MESSAGE value="feat: 시작화면 창 띄우기" />
     <MESSAGE value="feat: 시작 화면 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 시작 화면 구현" />
+    <MESSAGE value="feat: 글 쓰러 가기 화면 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 글 쓰러 가기 화면 구현" />
   </component>
 </project>
