@@ -1,8 +1,10 @@
 import tkinter as tk
 
-from FreeWritingScreen import FreeWritingScreen
 from StartScreen import StartScreen
 from WritingScreen import WritingScreen
+from FreeWritingScreen import FreeWritingScreen
+from SelectRandomScreen import SelectRandomScreen
+from SelectRandomWritingScreen import SelectRandomWritingScreen
 
 class MainApp(tk.Tk):
     def __init__(self):
@@ -23,7 +25,7 @@ class MainApp(tk.Tk):
         # 화면 딕셔너리에 프레임 저장
         self.frames = {}
 
-        for F in (StartScreen, WritingScreen, FreeWritingScreen):
+        for F in (StartScreen, WritingScreen, FreeWritingScreen, SelectRandomScreen, SelectRandomWritingScreen):
             page_name = F.__name__
             frame = F(container, self)  # controller로 self를 전달
             self.frames[page_name] = frame

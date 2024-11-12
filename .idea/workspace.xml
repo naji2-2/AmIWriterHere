@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a30e3a00-4c67-4eef-a190-a5fee6ad9295" name="변경" comment="feat: 글 쓰러 가기 화면 구현">
-      <change afterPath="$PROJECT_DIR$/FreeWritingScreen.py" afterDir="false" />
+    <list default="true" id="a30e3a00-4c67-4eef-a190-a5fee6ad9295" name="변경" comment="fix: 자유 글 쓰기 화면 수정">
+      <change afterPath="$PROJECT_DIR$/SelectRandomScreen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SelectRandomWritingScreen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeWritingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/FreeWritingScreen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WritingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/WritingScreen.py" afterDir="false" />
     </list>
@@ -54,6 +56,7 @@
     "Python.FreeWritingScreen.executor": "Run",
     "Python.Main.executor": "Run",
     "Python.Random.executor": "Run",
+    "Python.SelectRandomScreen.executor": "Run",
     "Python.StartScreen.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -116,8 +119,47 @@
       <option name="project" value="LOCAL" />
       <updated>1730649193453</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: 자유 글 쓰기 화면 구현">
+      <option name="closed" value="true" />
+      <created>1731372025508</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731372025508</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix: 자유 글 쓰기 화면 수정">
+      <option name="closed" value="true" />
+      <created>1731372098368</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731372098368</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
@@ -125,6 +167,8 @@
     <MESSAGE value="feat: 시작화면 창 띄우기" />
     <MESSAGE value="feat: 시작 화면 구현" />
     <MESSAGE value="feat: 글 쓰러 가기 화면 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 글 쓰러 가기 화면 구현" />
+    <MESSAGE value="feat: 자유 글 쓰기 화면 구현" />
+    <MESSAGE value="fix: 자유 글 쓰기 화면 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 자유 글 쓰기 화면 수정" />
   </component>
 </project>

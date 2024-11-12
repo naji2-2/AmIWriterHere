@@ -59,7 +59,8 @@ class WritingScreen(tk.Frame):
         # 버튼 생성
         button_to_Free = tk.Button(button_frame, text="자유 글 쓰기 ▶", font=("제주고딕", 30),
                                       command=lambda: controller.show_frame("FreeWritingScreen"))
-        button_to_Random = tk.Button(button_frame, text="랜덤 소재 뽑기 ▶", font=("제주고딕", 30))
+        button_to_Random = tk.Button(button_frame, text="랜덤 소재 뽑기 ▶", font=("제주고딕", 30),
+                                     command=lambda: controller.show_frame("SelectRandomScreen"))
 
         button_to_Free.pack(side="top", padx=10, pady=15)
         button_to_Random.pack(side="top", padx=10, pady=15)
