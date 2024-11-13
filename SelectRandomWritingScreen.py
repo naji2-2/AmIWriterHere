@@ -1,12 +1,17 @@
 import os
 import tkinter as tk
 from PIL import Image, ImageTk
+import SelectRandomScreen as SRS
 
 class SelectRandomWritingScreen(tk.Frame):
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller, character, keyword, incident):
         tk.Frame.__init__(self, parent)
         self.grid(row=0, column=0, sticky="nsew")
         self.controller = controller
+        # MainApp에서 전달된 랜덤 값
+        self.character = character
+        self.keyword = keyword
+        self.incident = incident
 
         # 캔버스 생성
         self.canvas = tk.Canvas(self, width=2280, height=1800)
@@ -63,12 +68,42 @@ class SelectRandomWritingScreen(tk.Frame):
         self.writing_text = tk.Text(self, font=("제주고딕", 20), bg="white")
         self.writing_text.place(x=100, y=300, w=1000, h=550, anchor="nw")
 
-        def display_input():
+        def check_conditions_and_save():
+            # 입력된 글 내용 가져오기
+            text_content = self.writing_text.get("1.0", tk.END).strip()  # .strip() 텍스트에서 불필요한 개행 제거
             if not self.title:
                 print("제목이 비어 있습니다!")
                 return  # 제목이 없으면 저장하지 않음
 
-            # 사용자가 지정한 제목으로 파일 만들기
+            # 조건들에 맞지 않으면 저장하지 않음
+            if len(self.character) > 1:
+                error_messages = []
+                if self.character[0] not in text_content:
+                    error_messages.append(f"'{self.character[0]}'이/가 포함되지 않았습니다.\n")
+                if self.character[1] not in text_content:
+                    error_messages.append(f"'{self.character[1]}'이/가 포함되지 않았습니다.\n")
+                if self.keyword not in text_content:
+                    error_messages.append(f"'{self.keyword}'이/가 포함되지 않았습니다.\n")
+                if self.incident not in text_content:
+                    error_messages.append(f"'{self.incident}'이/가 포함되지 않았습니다.")
+
+                if error_messages:
+                    combined_message = "\n".join(error_messages)
+
+                    # 기존 레이블 삭제
+                    if hasattr(self, "error_label") and self.error_label is not None:
+                        self.error_label.destroy()  # 레이블 삭제
+
+                    # 새로운 레이블 생성
+                    self.error_label = tk.Label(
+                        self, text=combined_message, font=("제주고딕", 20), fg="red", bg="white", justify="left"
+                    )
+                    self.canvas.create_window(
+                        300, 600, anchor="nw", window=self.error_label
+                    )
+                    return  # 조건이 맞지 않으면 함수 종료
+
+            # 조건을 만족하는 경우에만 파일 저장 및 화면 전환
             save_folder = "C:/Users/USER/PycharmProjects/2024-Python-Project/user_novels/"
 
             # 파일 경로 생성
@@ -77,8 +112,12 @@ class SelectRandomWritingScreen(tk.Frame):
             try:
                 # 파일 열기 및 내용 저장
                 with open(file_path, "w", encoding="utf8") as Novel:
-                    Novel.write(self.writing_text.get("1.0", tk.END).strip())
+                    Novel.write(text_content)
                 print(f"'{file_path}'에 저장되었습니다.")
+
+                # 조건을 만족하면 화면 전환
+                controller.show_frame("StartScreen")  # 화면 전환
+
             except Exception as e:
                 print(f"파일 저장 중 오류 발생: {e}")
 
@@ -88,8 +127,7 @@ class SelectRandomWritingScreen(tk.Frame):
         back_button.place(x=1180, y=50, anchor="nw")
 
         # 작성완료 버튼
-        writingOk_button = tk.Button(self, image=bubblebutton_image,text="작성 완료", font=("제주고딕", 25),
-                                compound="center",
-                                command=lambda: (display_input(), controller.show_frame("StartScreen")))
+        writingOk_button = tk.Button(self, image=bubblebutton_image, text="작성 완료", font=("제주고딕", 25),
+                                      compound="center", command=lambda: check_conditions_and_save())
         writingOk_button.image = bubblebutton_image     # 이미지 참조 유지
         writingOk_button.place(x=1180, y=600, anchor="nw")

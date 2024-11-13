@@ -8,24 +8,24 @@ keyword = ["시한부", "빙의", "환생", "회귀", "정략결혼", "소꿉친
 #  사건 리스트
 incident = ["폭탄발언", "비밀동맹", "새로운 경험", "두근거림", "은밀한 접촉", "데뷔당트", "무도회", "이혼", "전쟁"]
 
-selected_characters = []
+selected_characters = [2]
 
 # 캐릭터 랜덤 선택 (중복 되지 않는 두명)
 def random_character():
-    selected_characters = random.sample(character, 2)
-    print("등장인물 : {0}, {1}".format(selected_characters[0], selected_characters[1]))
+    # selected_characters = random.sample(character, 2)
+    # print("등장인물 : {0}, {1}".format(selected_characters[0], selected_characters[1]))
     return random.sample(character, 2)
 
 # 키워드 랜덤 선택
 def random_keyword():
     n = random.randrange(len(keyword))
-    print("키워드 : {}".format(keyword[n]))
+    # print("키워드 : {}".format(keyword[n]))
     return keyword[n]
 
 # 사건 랜덤 선택
 def random_incident():
     n = random.randrange(len(incident))
-    print("사건 : {}".format(incident[n]))
+    # print("사건 : {}".format(incident[n]))
     return incident[n]
 
 # selected_characters = random_character()

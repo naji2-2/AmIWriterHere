@@ -5,18 +5,18 @@ from Random import character, selected_characters
 
 
 class SelectRandomScreen(tk.Frame):
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller, character, keyword, incident):
         tk.Frame.__init__(self, parent)
         self.grid(row=0, column=0, sticky="nsew")
         self.controller = controller
+        # MainApp에서 전달된 랜덤 값
+        self.character = character
+        self.keyword = keyword
+        self.incident = incident
 
         # 캔버스 생성
         self.canvas = tk.Canvas(self, width=2280, height=1800)
         self.canvas.grid(row=0, column=0, sticky="nsew")
-
-        self.Character = []
-        self.Keyword = ""
-        self.Incident = ""
 
         self.result_label = tk.Label(self, text="", font=("제주고딕", 25), fg="black")
         self.result_label.place(x=800, y=500, anchor="nw")
@@ -59,14 +59,18 @@ class SelectRandomScreen(tk.Frame):
 
         # 모든 랜덤 함수 실행, 값 저장
         def select_randoms():
-            self.Character = Random.random_character()
-            self.Keyword = Random.random_keyword()
-            self.Incident = Random.random_incident()
+            # self.character = Random.random_character()
+            # print(f"캐릭터 : {self.character[0]}, {self.character[1]}")
+            # self.keyword = Random.random_keyword()
+            # print(f"키워드 : {self.keyword}")
+            # self.incident = Random.random_incident()
+            # print(f"사건: {self.incident}")
+
             # 랜덤 결과 화면에 표시
             self.result_label.config(
-                text=f"\n   ▷ 캐릭터: {self.Character[0], self.Character[1]}  \n\n"
-                     f"\n   ▷ 키워드: {self.Keyword}  \n\n"
-                     f"\n   ▷ 사건: {self.Incident}  \n\n",
+                text=f"\n   ▷ 캐릭터: {self.character[0], self.character[1]}  \n\n"
+                     f"\n   ▷ 키워드: {self.keyword}  \n\n"
+                     f"\n   ▷ 사건: {self.incident}  \n\n",
                 font=("제주고딕", 40),
                 justify="left",     # 왼쪽 정렬
                 width=25,           # 가로너비 고정
@@ -74,7 +78,6 @@ class SelectRandomScreen(tk.Frame):
                 bg="white"          # 배경색 설정
             )
             self.result_label.place(x=60,y=300, anchor="nw")
-            return Random.random_character(), Random.random_keyword(), Random.random_incident()
 
         # 돌아가기 버튼
         back_button = tk.Button(self, text="← 돌아가기", font=("제주고딕", 25),
@@ -84,13 +87,13 @@ class SelectRandomScreen(tk.Frame):
         # 랜덤 주제 고르기 버튼
         random_button = tk.Button(self, image=pinkbuble_button, text="랜덤\n주제뽑기", font=("제주고딕", 25),
                                      compound="center",
-                                     command=lambda: (select_randoms(), select_randoms))
+                                     command=lambda: select_randoms())
         random_button.image = pinkbuble_button
         random_button.place(x=1180, y=300, anchor="nw")
 
         # 글 쓰러 가기 버튼
         writingOk_button = tk.Button(self, image=bubblebutton_image,text="글 쓰기", font=("제주고딕", 25),
                                 compound="center",
-                                command=lambda: controller.show_frame("SelectRandomWritingScreen"))
+                                command=lambda: (controller.show_frame("SelectRandomWritingScreen"), self.character, self.keyword, self.incident))
         writingOk_button.image = bubblebutton_image     # 이미지 참조 유지
         writingOk_button.place(x=1180, y=600, anchor="nw")
