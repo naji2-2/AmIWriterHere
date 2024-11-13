@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from PIL import Image, ImageTk
 
@@ -43,6 +44,44 @@ class SelectRandomWritingScreen(tk.Frame):
         label = tk.Label(self, text="랜덤 주제 글 쓰기", font=("제주고딕", 100))
         label.place(relx=0.03, rely=0.05, anchor="nw")
 
+        title_label = tk.Label(self, text="제목 : ", font=("제주고딕", 25), bg="white")
+        title_label.place(x=100, y=230, anchor="nw")
+
+        # 제목 입력 받기
+        self.title_entry = tk.Entry(self, font=("제주고딕", 20), width=30)
+        self.title_entry.place(x=200, y=230, anchor="nw")
+
+        # 포커스 아웃 이벤트 핸들러
+        def on_focus_out(event):
+            self.title = self.title_entry.get()
+            print(f"입력된 제목: {self.title}")
+
+        # Entry에 포커스 아웃 이벤트 바인딩
+        self.title_entry.bind("<FocusOut>", on_focus_out)
+
+        # 글 입력 받기
+        self.writing_text = tk.Text(self, font=("제주고딕", 20), bg="white")
+        self.writing_text.place(x=100, y=300, w=1000, h=550, anchor="nw")
+
+        def display_input():
+            if not self.title:
+                print("제목이 비어 있습니다!")
+                return  # 제목이 없으면 저장하지 않음
+
+            # 사용자가 지정한 제목으로 파일 만들기
+            save_folder = "C:/Users/USER/PycharmProjects/2024-Python-Project/user_novels/"
+
+            # 파일 경로 생성
+            file_path = os.path.join(save_folder, f"{self.title}.txt")
+
+            try:
+                # 파일 열기 및 내용 저장
+                with open(file_path, "w", encoding="utf8") as Novel:
+                    Novel.write(self.writing_text.get("1.0", tk.END).strip())
+                print(f"'{file_path}'에 저장되었습니다.")
+            except Exception as e:
+                print(f"파일 저장 중 오류 발생: {e}")
+
         # 돌아가기 버튼
         back_button = tk.Button(self, text="← 돌아가기", font=("제주고딕", 25),
                                 command=lambda: controller.show_frame("SelectRandomScreen"))
@@ -51,6 +90,6 @@ class SelectRandomWritingScreen(tk.Frame):
         # 작성완료 버튼
         writingOk_button = tk.Button(self, image=bubblebutton_image,text="작성 완료", font=("제주고딕", 25),
                                 compound="center",
-                                command=lambda: controller.show_frame("StartScreen"))
+                                command=lambda: (display_input(), controller.show_frame("StartScreen")))
         writingOk_button.image = bubblebutton_image     # 이미지 참조 유지
         writingOk_button.place(x=1180, y=600, anchor="nw")
