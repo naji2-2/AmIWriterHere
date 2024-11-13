@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a30e3a00-4c67-4eef-a190-a5fee6ad9295" name="변경" comment="fix: 자유 글 쓰기 화면 수정">
-      <change afterPath="$PROJECT_DIR$/SelectRandomScreen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SelectRandomWritingScreen.py" afterDir="false" />
+    <list default="true" id="a30e3a00-4c67-4eef-a190-a5fee6ad9295" name="변경" comment="feat: 랜덤 소재 뽑기, 랜덤 소재 글 쓰기 화면 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FreeWritingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/FreeWritingScreen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WritingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/WritingScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Random.py" beforeDir="false" afterPath="$PROJECT_DIR$/Random.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SelectRandomScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/SelectRandomScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SelectRandomWritingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/SelectRandomWritingScreen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +55,7 @@
     "Python.Main.executor": "Run",
     "Python.Random.executor": "Run",
     "Python.SelectRandomScreen.executor": "Run",
+    "Python.SelectRandomWritingScreen.executor": "Run",
     "Python.StartScreen.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -135,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731372098368</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: 랜덤 소재 뽑기, 랜덤 소재 글 쓰기 화면 구현">
+      <option name="closed" value="true" />
+      <created>1731373595643</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731373595643</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +176,7 @@
     <MESSAGE value="feat: 글 쓰러 가기 화면 구현" />
     <MESSAGE value="feat: 자유 글 쓰기 화면 구현" />
     <MESSAGE value="fix: 자유 글 쓰기 화면 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 자유 글 쓰기 화면 수정" />
+    <MESSAGE value="feat: 랜덤 소재 뽑기, 랜덤 소재 글 쓰기 화면 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 랜덤 소재 뽑기, 랜덤 소재 글 쓰기 화면 구현" />
   </component>
 </project>

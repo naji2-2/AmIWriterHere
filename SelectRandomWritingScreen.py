@@ -36,7 +36,7 @@ class SelectRandomWritingScreen(tk.Frame):
         # 이미지를 캔버스에 추가
         # self.canvas.create_image(560, 25, image=self.bb_image, anchor="nw")
         self.canvas.create_image(1015, 40, image=self.bo_image, anchor="nw")
-        self.canvas.create_image(1065, 90, image=self.bg_image, anchor="nw")
+        self.canvas.create_image(1075, 90, image=self.bg_image, anchor="nw")
         # self.canvas.create_image(100, 30, image=self.gs_image, anchor="nw")
         self.canvas.create_image(60, 215, image=self.ws_image, anchor="nw")
 
