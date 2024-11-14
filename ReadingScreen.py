@@ -38,7 +38,7 @@ class ReadingScreen(tk.Frame):
         label.place(relx=0.03, rely=0.05, anchor="nw")
 
         # 파일 목록 표시
-        self.file_list = tk.Listbox(self, font=("제주고딕", 25), selectmode=tk.SINGLE)
+        self.file_list = tk.Listbox(self, font=("제주고딕", 20), selectmode=tk.SINGLE)
         self.file_list.place(x=50, y=215, width=400, height=600, anchor="nw")
 
         # 파일 로드 버튼
@@ -46,7 +46,7 @@ class ReadingScreen(tk.Frame):
         load_button.place(x=150, y=820, anchor="nw")
 
         # 텍스트 내용 표시 영역
-        self.text_area = scrolledtext.ScrolledText(self, wrap=tk.WORD, font=("제주고딕", 30))
+        self.text_area = scrolledtext.ScrolledText(self, wrap=tk.WORD, font=("제주고딕", 20))
         self.text_area.place(x=500, y=215, w=800, h=600, anchor="nw")
         self.text_area.configure(state="disabled")  # 읽기 전용으로 설정
 
@@ -69,6 +69,8 @@ class ReadingScreen(tk.Frame):
             for file in files:
                 if file.endswith(".txt"):  # 텍스트 파일만 추가
                     self.file_list.insert(tk.END, file)
+                    self.file_list.insert(tk.END, "")   # 글과 글 사이 간격을 위해 빈 문자열 추가
+
         except Exception as e:
             print(f"파일 목록을 불러오는 중 오류 발생: {str(e)}")
 
@@ -96,4 +98,4 @@ class ReadingScreen(tk.Frame):
     # 일정 시간마다 파일 목록을 갱신함
     def auto_refresh(self):
         self.load_file_list()
-        self.after(3000, self.auto_refresh)  # 5초마다 실행
+        self.after(5000, self.auto_refresh)  # 5초마다 실행
