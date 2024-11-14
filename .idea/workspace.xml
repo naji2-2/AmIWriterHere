@@ -7,7 +7,6 @@
     <list default="true" id="a30e3a00-4c67-4eef-a190-a5fee6ad9295" name="변경" comment="feat: 글 쓰기 화면 입력, 파일 생성 기능 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Random.py" beforeDir="false" afterPath="$PROJECT_DIR$/Random.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SelectRandomScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/SelectRandomScreen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SelectRandomWritingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/SelectRandomWritingScreen.py" afterDir="false" />
     </list>
@@ -50,19 +49,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.FreeWritingScreen.executor": "Run",
-    "Python.Main.executor": "Run",
-    "Python.Random.executor": "Run",
-    "Python.SelectRandomScreen.executor": "Run",
-    "Python.SelectRandomWritingScreen.executor": "Run",
-    "Python.StartScreen.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.FreeWritingScreen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Random.executor&quot;: &quot;Run&quot;,
+    &quot;Python.SelectRandomScreen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.SelectRandomWritingScreen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.StartScreen.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

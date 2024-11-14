@@ -1,17 +1,23 @@
 import os
 import tkinter as tk
 from PIL import Image, ImageTk
-import SelectRandomScreen as SRS
+import re
+from SelectRandomScreen import SelectRandomScreen
+
 
 class SelectRandomWritingScreen(tk.Frame):
-    def __init__(self, parent, controller, character, keyword, incident):
+    def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         self.grid(row=0, column=0, sticky="nsew")
         self.controller = controller
-        # MainApp에서 전달된 랜덤 값
-        self.character = character
-        self.keyword = keyword
-        self.incident = incident
+
+        # SelectRandomScreen 클래스의 인스턴스 생성
+        self.srs = SelectRandomScreen(parent, controller)
+
+        # 등장인물, 키워드, 사건
+        self.character = [0 for i in range(2)]
+        self.keyword = ""
+        self.incident = ""
 
         # 캔버스 생성
         self.canvas = tk.Canvas(self, width=2280, height=1800)
@@ -64,6 +70,22 @@ class SelectRandomWritingScreen(tk.Frame):
         # Entry에 포커스 아웃 이벤트 바인딩
         self.title_entry.bind("<FocusOut>", on_focus_out)
 
+        # 모든 랜덤 함수 실행, 값 저장
+        def randoms():
+            random = str(self.srs.select_randoms())
+            # random의 특수 문자 없애기
+            random = re.sub(r"[^\uAC00-\uD7A30-9a-zA-Z\s]", "", random)
+            # 공백으로 문자열 나눠줌
+            random = random.split(" ")
+            self.character[0] = random[0]
+            self.character[1] = random[1]
+            # print(self.character)
+            self.keyword = random[2]
+            self.incident = random[3]
+            # print("글쓰기에서 실행")
+
+        randoms()
+
         # 글 입력 받기
         self.writing_text = tk.Text(self, font=("제주고딕", 20), bg="white")
         self.writing_text.place(x=100, y=300, w=1000, h=550, anchor="nw")
@@ -76,32 +98,31 @@ class SelectRandomWritingScreen(tk.Frame):
                 return  # 제목이 없으면 저장하지 않음
 
             # 조건들에 맞지 않으면 저장하지 않음
-            if len(self.character) > 1:
-                error_messages = []
-                if self.character[0] not in text_content:
-                    error_messages.append(f"'{self.character[0]}'이/가 포함되지 않았습니다.\n")
-                if self.character[1] not in text_content:
-                    error_messages.append(f"'{self.character[1]}'이/가 포함되지 않았습니다.\n")
-                if self.keyword not in text_content:
-                    error_messages.append(f"'{self.keyword}'이/가 포함되지 않았습니다.\n")
-                if self.incident not in text_content:
-                    error_messages.append(f"'{self.incident}'이/가 포함되지 않았습니다.")
+            error_messages = []
+            if self.character[0] not in text_content:
+                error_messages.append(f"'{self.character[0]}'이/가 포함되지 않았습니다.\n")
+            if self.character[1] not in text_content:
+                error_messages.append(f"'{self.character[1]}'이/가 포함되지 않았습니다.\n")
+            if self.keyword not in text_content:
+                error_messages.append(f"'{self.keyword}'이/가 포함되지 않았습니다.\n")
+            if self.incident not in text_content:
+                error_messages.append(f"'{self.incident}'이/가 포함되지 않았습니다.")
 
-                if error_messages:
-                    combined_message = "\n".join(error_messages)
+            if error_messages:
+                combined_message = "\n".join(error_messages)
 
-                    # 기존 레이블 삭제
-                    if hasattr(self, "error_label") and self.error_label is not None:
-                        self.error_label.destroy()  # 레이블 삭제
+                # 기존 레이블 삭제
+                if hasattr(self, "error_label") and self.error_label is not None:
+                    self.error_label.destroy()  # 레이블 삭제
 
-                    # 새로운 레이블 생성
-                    self.error_label = tk.Label(
-                        self, text=combined_message, font=("제주고딕", 20), fg="red", bg="white", justify="left"
-                    )
-                    self.canvas.create_window(
-                        300, 600, anchor="nw", window=self.error_label
-                    )
-                    return  # 조건이 맞지 않으면 함수 종료
+                # 새로운 레이블 생성
+                self.error_label = tk.Label(
+                    self, text=combined_message, font=("제주고딕", 20), fg="red", bg="white", justify="left"
+                )
+                self.canvas.create_window(
+                    300, 600, anchor="nw", window=self.error_label
+                )
+                return  # 조건이 맞지 않으면 함수 종료
 
             # 조건을 만족하는 경우에만 파일 저장 및 화면 전환
             save_folder = "C:/Users/USER/PycharmProjects/2024-Python-Project/user_novels/"
