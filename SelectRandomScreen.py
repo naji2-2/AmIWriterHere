@@ -98,10 +98,10 @@ class SelectRandomScreen(tk.Frame):
         random = random.split(" ")
         self.character[0] = random[0]
         self.character[1] = random[1]
-        # print(self.character)
+        print(self.character)
         self.keyword = random[2]
         self.incident = random[3]
-        # print("선택에서 실행")
-
-        # 랜덤 결과 화면에 표시
-        return self.character, self.keyword, self.incident
+        print("선택에서 실행")
+        self.controller.character = self.character
+        self.controller.keyword = self.keyword
+        self.controller.incident = self.incident

@@ -11,13 +11,11 @@ class SelectRandomWritingScreen(tk.Frame):
         self.grid(row=0, column=0, sticky="nsew")
         self.controller = controller
 
-        # SelectRandomScreen 클래스의 인스턴스 생성
-        self.srs = SelectRandomScreen(parent, controller)
-
-        # 등장인물, 키워드, 사건
-        self.character = [0 for i in range(2)]
-        self.keyword = ""
-        self.incident = ""
+        # controller에서 값 가져오기
+        self.character = self.controller.character
+        self.keyword = self.controller.keyword
+        self.incident = self.controller.incident
+        print(self.character, self.keyword, self.incident)
 
         # 캔버스 생성
         self.canvas = tk.Canvas(self, width=2280, height=1800)
@@ -70,27 +68,17 @@ class SelectRandomWritingScreen(tk.Frame):
         # Entry에 포커스 아웃 이벤트 바인딩
         self.title_entry.bind("<FocusOut>", on_focus_out)
 
-        # 모든 랜덤 함수 실행, 값 저장
-        def randoms():
-            random = str(self.srs.select_randoms())
-            # random의 특수 문자 없애기
-            random = re.sub(r"[^\uAC00-\uD7A30-9a-zA-Z\s]", "", random)
-            # 공백으로 문자열 나눠줌
-            random = random.split(" ")
-            self.character[0] = random[0]
-            self.character[1] = random[1]
-            # print(self.character)
-            self.keyword = random[2]
-            self.incident = random[3]
-            # print("글쓰기에서 실행")
-
-        randoms()
-
         # 글 입력 받기
         self.writing_text = tk.Text(self, font=("제주고딕", 20), bg="white")
         self.writing_text.place(x=100, y=300, w=1000, h=550, anchor="nw")
 
         def check_conditions_and_save():
+            # controller에서 값 가져오기
+            self.character = self.controller.character
+            self.keyword = self.controller.keyword
+            self.incident = self.controller.incident
+            # print(self.character, self.keyword, self.incident)
+
             # 입력된 글 내용 가져오기
             text_content = self.writing_text.get("1.0", tk.END).strip()  # .strip() 텍스트에서 불필요한 개행 제거
             if not self.title:
