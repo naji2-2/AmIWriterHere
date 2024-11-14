@@ -48,7 +48,8 @@ class StartScreen(tk.Frame):
         # 버튼 생성
         button_to_Writing = tk.Button(button_frame, text="글 쓰러가기 ▶", font=("제주고딕", 30),
                                       command=lambda: controller.show_frame("WritingScreen"))
-        button_to_Reading = tk.Button(button_frame, text="글 보러가기 ▶", font=("제주고딕", 30))
+        button_to_Reading = tk.Button(button_frame, text="글 보러가기 ▶", font=("제주고딕", 30),
+                                      command=lambda : controller.show_frame("ReadingScreen"))
 
         button_to_Writing.pack(side="top", padx=10, pady=15)
         button_to_Reading.pack(side="top", padx=10, pady=15)

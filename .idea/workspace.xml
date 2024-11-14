@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a30e3a00-4c67-4eef-a190-a5fee6ad9295" name="변경" comment="feat: 글 쓰기 화면 입력, 파일 생성 기능 구현">
+    <list default="true" id="a30e3a00-4c67-4eef-a190-a5fee6ad9295" name="변경" comment="fix: 주석 수정">
+      <change afterPath="$PROJECT_DIR$/ReadingScreen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SelectRandomScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/SelectRandomScreen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SelectRandomWritingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/SelectRandomWritingScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StartScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/StartScreen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Python Stub" />
       </list>
     </option>
   </component>
@@ -158,7 +159,39 @@
       <option name="project" value="LOCAL" />
       <updated>1731496121146</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix: 랜덤 소재 뽑기 기능 수정">
+      <option name="closed" value="true" />
+      <created>1731565013619</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1731565013619</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix: 주석 수정">
+      <option name="closed" value="true" />
+      <created>1731595767138</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1731595767138</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix: 주석 수정">
+      <option name="closed" value="true" />
+      <created>1731595943290</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1731595943290</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix: 주석 수정">
+      <option name="closed" value="true" />
+      <created>1731596114997</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1731596114997</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,6 +228,8 @@
     <MESSAGE value="feat: 랜덤 소재 뽑기, 랜덤 소재 글 쓰기 화면 구현" />
     <MESSAGE value="feat: 랜덤 소재 뽑기 기능 구현" />
     <MESSAGE value="feat: 글 쓰기 화면 입력, 파일 생성 기능 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 글 쓰기 화면 입력, 파일 생성 기능 구현" />
+    <MESSAGE value="fix: 랜덤 소재 뽑기 기능 수정" />
+    <MESSAGE value="fix: 주석 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 주석 수정" />
   </component>
 </project>
