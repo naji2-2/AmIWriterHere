@@ -118,7 +118,9 @@ class SelectRandomWritingScreen(tk.Frame):
                 # 파일 열기 및 내용 저장
                 with open(file_path, "w", encoding="utf8") as Novel:
                     Novel.write(text_content)
+                    Novel.close()
                 print(f"'{file_path}'에 저장되었습니다.")
+                clear_fields()
 
                 # 조건을 만족하면 화면 전환
                 controller.show_frame("StartScreen")  # 화면 전환
@@ -126,9 +128,14 @@ class SelectRandomWritingScreen(tk.Frame):
             except Exception as e:
                 print(f"파일 저장 중 오류 발생: {e}")
 
+        # 필드 비움
+        def clear_fields():
+            self.title_entry.delete(0, tk.END)
+            self.writing_text.delete("1.0", tk.END)
+
         # 돌아가기 버튼
         back_button = tk.Button(self, text="← 돌아가기", font=("제주고딕", 25),
-                                command=lambda: controller.show_frame("SelectRandomScreen"))
+                                command=lambda: (clear_fields(), controller.show_frame("SelectRandomScreen")))
         back_button.place(x=1180, y=50, anchor="nw")
 
         # 작성완료 버튼
