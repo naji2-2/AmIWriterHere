@@ -24,8 +24,8 @@ class SelectRandomWritingScreen(tk.Frame):
         self.canvas.grid(row=0, column=0, sticky="nsew")
 
         # 비눗방울 이미지
-        bluebubble_image = Image.open("images/blue_bubble2.png")  # 이미지 걍로
-        resized_blue = bluebubble_image.resize((200, 200))  # 크기조정
+        bluebubble_image = Image.open("images/blue_bubble2.png")    # 이미지 경로
+        resized_blue = bluebubble_image.resize((200, 200))          # 크기 조정
         bubblebutton_image = ImageTk.PhotoImage(resized_blue)
         # self.bb_image = ImageTk.PhotoImage(resized_blue)
 
