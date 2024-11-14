@@ -1,6 +1,4 @@
 import tkinter as tk
-
-from ReadingNovelScreen import ReadingNovelScreen
 from ReadingScreen import ReadingScreen
 from StartScreen import StartScreen
 from WritingScreen import WritingScreen
