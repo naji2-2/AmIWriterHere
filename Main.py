@@ -1,5 +1,6 @@
 import tkinter as tk
 
+from ReadingNovelScreen import ReadingNovelScreen
 from ReadingScreen import ReadingScreen
 from StartScreen import StartScreen
 from WritingScreen import WritingScreen
@@ -19,6 +20,10 @@ class MainApp(tk.Tk):
         self.character = []
         self.keyword = ""
         self.incident = ""
+
+        # 파일이름, 정보
+        self.file_name = ""
+        self.file_path = ""
 
         # ESC 키를 눌러 전체 화면 종료
         self.bind("<Escape>", self.quit_fullscreen)

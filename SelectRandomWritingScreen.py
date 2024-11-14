@@ -1,9 +1,6 @@
 import os
 import tkinter as tk
 from PIL import Image, ImageTk
-import re
-from SelectRandomScreen import SelectRandomScreen
-
 
 class SelectRandomWritingScreen(tk.Frame):
     def __init__(self, parent, controller):
@@ -15,7 +12,6 @@ class SelectRandomWritingScreen(tk.Frame):
         self.character = self.controller.character
         self.keyword = self.controller.keyword
         self.incident = self.controller.incident
-        print(self.character, self.keyword, self.incident)
 
         # 캔버스 생성
         self.canvas = tk.Canvas(self, width=2280, height=1800)
