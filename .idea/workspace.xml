@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a30e3a00-4c67-4eef-a190-a5fee6ad9295" name="변경" comment="fix: 사용하지 않는 import 제거">
+    <list default="true" id="a30e3a00-4c67-4eef-a190-a5fee6ad9295" name="변경" comment="fix: 글 목록 간격 추가, 글 목록 갱신 시간 조정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FreeWritingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/FreeWritingScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReadingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReadingScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SelectRandomScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/SelectRandomScreen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SelectRandomWritingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/SelectRandomWritingScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StartScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/StartScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WritingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/WritingScreen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +60,7 @@
     "Python.Main.executor": "Run",
     "Python.Random.executor": "Run",
     "Python.ReadingNovelScreen.executor": "Run",
+    "Python.ReadingScreen.executor": "Run",
     "Python.SelectRandomScreen.executor": "Run",
     "Python.SelectRandomWritingScreen.executor": "Run",
     "Python.StartScreen.executor": "Run",
@@ -229,7 +234,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731610625868</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feat: 제목, 글 필드 비우기 기능 추가">
+      <option name="closed" value="true" />
+      <created>1731612246255</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1731612246255</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix: 글 목록 간격 추가, 글 목록 갱신 시간 조정">
+      <option name="closed" value="true" />
+      <created>1731612315261</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1731612315261</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,6 +293,8 @@
     <MESSAGE value="fix: 랜덤 소재 뽑기 값 전달 방식 수정" />
     <MESSAGE value="feat: 글 보러 가기 기능 구현" />
     <MESSAGE value="fix: 사용하지 않는 import 제거" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 사용하지 않는 import 제거" />
+    <MESSAGE value="feat: 제목, 글 필드 비우기 기능 추가" />
+    <MESSAGE value="fix: 글 목록 간격 추가, 글 목록 갱신 시간 조정" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 글 목록 간격 추가, 글 목록 갱신 시간 조정" />
   </component>
 </project>
