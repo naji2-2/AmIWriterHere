@@ -63,19 +63,41 @@ class FreeWritingScreen(tk.Frame):
         self.writing_text = tk.Text(self, font=("제주고딕", 20), bg="white")
         self.writing_text.place(x=100, y=300, w=1000, h=550, anchor="nw")
 
+        # 제목에 특수 문자 저장을 위한 함수
+        def replace_forbidden_chars(filename):
+            replacements = {
+                '?': '？',
+                '*': '＊',
+                '<': '＜',
+                '>': '＞',
+                ':': '：',
+                '"': '＂',
+                '/': '／',
+                '\\': '＼',
+                '|': '｜',
+            }
+            for forbidden, replacement in replacements.items():
+                filename = filename.replace(forbidden, replacement)
+            return filename
+
         def display_input():
             if not self.title:
                 print("제목이 비어 있습니다!")
                 return  # 제목이 없으면 저장하지 않음
 
-            # 사용자가 지정한 제목으로 파일 만들기
-            save_folder = "C:/Users/USER/PycharmProjects/2024-Python-Project/user_novels/"
-
-            # 파일 경로 생성
-            file_path = os.path.join(save_folder, f"{self.title}.txt")
-
             try:
-                # 파일 열기 및 내용 저장
+                if not self.title:
+                    print("제목이 비어 있습니다!")
+                    return
+
+                # 폴더 경로 및 제목 변환
+                save_folder = "C:/Users/USER/PycharmProjects/2024-Python-Project/user_novels/"
+                if not os.path.exists(save_folder):
+                    os.makedirs(save_folder)
+
+                # 금지된 문자 변환 후 파일 저장
+                sanitized_title = replace_forbidden_chars(self.title)
+                file_path = os.path.join(save_folder, f"{sanitized_title}.txt")
                 with open(file_path, "w", encoding="utf8") as Novel:
                     Novel.write(self.writing_text.get("1.0", tk.END).strip())
                     Novel.close()

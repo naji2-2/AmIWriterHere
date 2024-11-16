@@ -68,12 +68,28 @@ class SelectRandomWritingScreen(tk.Frame):
         self.writing_text = tk.Text(self, font=("제주고딕", 20), bg="white")
         self.writing_text.place(x=100, y=300, w=1000, h=550, anchor="nw")
 
+        # 제목에 특수 문자 저장을 위한 함수
+        def replace_forbidden_chars(filename):
+            replacements = {
+                '?': '？',
+                '*': '＊',
+                '<': '＜',
+                '>': '＞',
+                ':': '：',
+                '"': '＂',
+                '/': '／',
+                '\\': '＼',
+                '|': '｜',
+            }
+            for forbidden, replacement in replacements.items():
+                filename = filename.replace(forbidden, replacement)
+            return filename
+
         def check_conditions_and_save():
             # controller에서 값 가져오기
             self.character = self.controller.character
             self.keyword = self.controller.keyword
             self.incident = self.controller.incident
-            # print(self.character, self.keyword, self.incident)
 
             # 입력된 글 내용 가져오기
             text_content = self.writing_text.get("1.0", tk.END).strip()  # .strip() 텍스트에서 불필요한 개행 제거
@@ -111,8 +127,9 @@ class SelectRandomWritingScreen(tk.Frame):
             # 조건을 만족하는 경우에만 파일 저장 및 화면 전환
             save_folder = "C:/Users/USER/PycharmProjects/2024-Python-Project/user_novels/"
 
-            # 파일 경로 생성
-            file_path = os.path.join(save_folder, f"{self.title}.txt")
+            # 금지된 문자 변환 후 파일 저장
+            sanitized_title = replace_forbidden_chars(self.title)
+            file_path = os.path.join(save_folder, f"{sanitized_title}.txt")
 
             try:
                 # 파일 열기 및 내용 저장
