@@ -58,16 +58,16 @@ class WritingScreen(tk.Frame):
 
         # 버튼 생성
         button_to_Free = tk.Button(button_frame, text="자유 글 쓰기 ▶", font=("제주고딕", 30),
-                                      command=lambda: controller.show_frame("FreeWritingScreen"))
+                                      command=lambda: (controller.play_button_click_sound(), controller.show_frame("FreeWritingScreen")))
         button_to_Random = tk.Button(button_frame, text="랜덤 소재 뽑기 ▶", font=("제주고딕", 30),
-                                     command=lambda: controller.show_frame("SelectRandomScreen"))
+                                     command=lambda: (controller.play_button_click_sound(), controller.show_frame("SelectRandomScreen")))
 
         button_to_Free.pack(side="top", padx=10, pady=15)
         button_to_Random.pack(side="top", padx=10, pady=15)
 
         # 돌아가기 버튼
         back_button = tk.Button(self, text="← 돌아가기", font=("제주고딕", 25),
-                                command=lambda: controller.show_frame("StartScreen"))
+                                command=lambda: (controller.play_back_button_click_sound(), controller.show_frame("StartScreen")))
         back_button.place(x=1180, y=50, anchor="nw")
 
     # 선택 된 주제

@@ -90,12 +90,12 @@ class FreeWritingScreen(tk.Frame):
 
         # 돌아가기 버튼
         back_button = tk.Button(self, text="← 돌아가기", font=("제주고딕", 25),
-                                command=lambda: (clear_fields(), controller.show_frame("WritingScreen")))
+                                command=lambda: (clear_fields(), controller.play_back_button_click_sound(), controller.show_frame("WritingScreen")))
         back_button.place(x=1180, y=50, anchor="nw")
 
         # 작성완료 버튼
         writingOk_button = tk.Button(self, image=bubblebutton_image, text="작성 완료", font=("제주고딕", 25),
                                      compound="center",
-                                     command=lambda: (display_input(), clear_fields(), controller.show_frame("StartScreen")))
+                                     command=lambda: (display_input(), clear_fields(), controller.play_button_click_sound(), controller.show_frame("StartScreen")))
         writingOk_button.image = bubblebutton_image     # 이미지 참조 유지
         writingOk_button.place(x=1180, y=600, anchor="nw")

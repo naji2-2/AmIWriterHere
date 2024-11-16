@@ -53,20 +53,20 @@ class SelectRandomScreen(tk.Frame):
 
         # 돌아가기 버튼
         back_button = tk.Button(self, text="← 돌아가기", font=("제주고딕", 25),
-                                command=lambda: controller.show_frame("WritingScreen"))
+                                command=lambda: (controller.play_back_button_click_sound(), controller.show_frame("WritingScreen")))
         back_button.place(x=1180, y=100, anchor="nw")
 
         # 랜덤 주제 고르기 버튼
         random_button = tk.Button(self, image=pinkbuble_button, text="랜덤\n주제뽑기", font=("제주고딕", 25),
                                      compound="center",
-                                     command=lambda: handle_random_selection())
+                                     command=lambda: (controller.play_button_click_sound(), handle_random_selection()))
         random_button.image = pinkbuble_button
         random_button.place(x=1180, y=300, anchor="nw")
 
         # 글 쓰러 가기 버튼
         writingOk_button = tk.Button(self, image=bubblebutton_image,text="글 쓰기", font=("제주고딕", 25),
                                 compound="center",
-                                command=lambda: controller.show_frame("SelectRandomWritingScreen"))
+                                command=lambda: (controller.play_button_click_sound(), controller.show_frame("SelectRandomWritingScreen")))
         writingOk_button.image = bubblebutton_image     # 이미지 참조 유지
         writingOk_button.place(x=1180, y=600, anchor="nw")
 

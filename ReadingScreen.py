@@ -58,7 +58,7 @@ class ReadingScreen(tk.Frame):
 
         # 돌아가기 버튼
         back_button = tk.Button(self, text="← 돌아가기", font=("제주고딕", 25),
-                                command=lambda: controller.show_frame("StartScreen"))
+                                command=lambda: (controller.play_back_button_click_sound(), controller.show_frame("StartScreen")))
         back_button.place(x=1180, y=50, anchor="nw")
 
     # 텍스트 파일 목록을 불러와 리스트에 추가
